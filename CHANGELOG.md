@@ -26,3 +26,6 @@ battery2_status
 ### 2023/11/18
 Added setting to change the regresh rate (In seconds) to the configuration screen.
 
+### 2023/11/19
+Added support for multiple inverters.
+
