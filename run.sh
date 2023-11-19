@@ -11,7 +11,7 @@ Home_Assistant_IP=""
 
 sunsynk_user="$(bashio::config 'sunsynk_user')"
 sunsynk_pass="$(bashio::config 'sunsynk_pass')"
-sunsynk_serial="$(bashio::config 'sunsynk_serial')"
+sunsynk_serial="$(bashio::config 'sunsynk_serial')" | tr -d '[:space:]
 HA_LongLiveToken="$(bashio::config 'HA_LongLiveToken')"
 Home_Assistant_IP="$(bashio::config 'Home_Assistant_IP')"
 Refresh_rate="$(bashio::config 'Refresh_rate')"
