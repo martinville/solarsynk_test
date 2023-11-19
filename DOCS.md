@@ -34,6 +34,7 @@ DO NOT USE localhost or 127.0.0.1 in the IP field, either use the actual IP or h
 ![](https://github.com/martinville/solarsynk/blob/main/configuration.png)
 
 In case you are unsure what your Sunsynk inverter's serial number is. Log into the synsynk.net portal and copy the serial number from the "Inverter" menu item.
+For multiple inverters seperate the inverter serial numbers with a semi colon ; Example 123456;7890123
 
 ![](https://github.com/martinville/solarsynk/blob/main/sunserial.png)
 
