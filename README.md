@@ -1,4 +1,4 @@
-![](https://github.com/martinville/solarsynk/blob/main/logo.png)
+![](https://github.com/martinville/solarsynk_test/blob/main/logo.png)
 
 
 ## How it works
