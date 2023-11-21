@@ -84,58 +84,58 @@ echo ---------------------------------------------------------------------------
 
 echo "Data fetched for serial $inverter_serial, see below data dump. If all values are NULL then something went wrong."
 #Total Battery
-battery_capacity=$(jq -r '.data.capacity' batterydata.json)
-battery_chargevolt=$(jq -r '.data.chargeVolt' batterydata.json)
-battery_current=$(jq -r '.data.current' batterydata.json)
-battery_dischargevolt=$(jq -r '.data.dischargeVolt' batterydata.json)
-battery_power=$(jq -r '.data.power' batterydata.json)
-battery_soc=$(jq -r '.data.soc' batterydata.json)
-battery_temperature=$(jq -r '.data.temp' batterydata.json)
-battery_type=$(jq -r '.data.type' batterydata.json)
-battery_voltage=$(jq -r '.data.voltage' batterydata.json)
+battery_capacity=$(jq -r '.data.capacity' batterydata.json); if [ $battery_capacity == "null" ]; then battery_capacity="0"; fi;
+battery_chargevolt=$(jq -r '.data.chargeVolt' batterydata.json); if [ $battery_chargevolt == "null" ]; then battery_chargevolt="0"; fi;
+battery_current=$(jq -r '.data.current' batterydata.json); if [ $battery_current == "null" ]; then battery_current="0"; fi;
+battery_dischargevolt=$(jq -r '.data.dischargeVolt' batterydata.json); if [ $battery_dischargevolt == "null" ]; then battery_dischargevolt="0"; fi;
+battery_power=$(jq -r '.data.power' batterydata.json); if [ $battery_power == "null" ]; then battery_power="0"; fi;
+battery_soc=$(jq -r '.data.soc' batterydata.json); if [ $battery_soc == "null" ]; then battery_soc="0"; fi;
+battery_temperature=$(jq -r '.data.temp' batterydata.json); if [ $battery_temperature == "null" ]; then battery_temperature="0"; fi;
+battery_type=$(jq -r '.data.type' batterydata.json); if [ $battery_type == "null" ]; then battery_type="0"; fi;
+battery_voltage=$(jq -r '.data.voltage' batterydata.json); if [ $battery_voltage == "null" ]; then battery_voltage="0"; fi;
 #Battery 1
-battery1_voltage=$(jq -r '.data.batteryVolt1' batterydata.json)
-battery1_current=$(jq -r '.data.batteryCurrent1' batterydata.json)
-battery1_power=$(jq -r '.data.batteryPower1' batterydata.json)
-battery1_soc=$(jq -r '.data.batterySoc1' batterydata.json)
-battery1_temperature=$(jq -r '.data.batteryTemp1' batterydata.json)
-battery1_status=$(jq -r '.data.batteryStatus1' batterydata.json)
+battery1_voltage=$(jq -r '.data.batteryVolt1' batterydata.json); if [ $battery1_voltage == "null" ]; then battery1_voltage="0"; fi;
+battery1_current=$(jq -r '.data.batteryCurrent1' batterydata.json); if [ $battery1_current == "null" ]; then battery1_current="0"; fi;
+battery1_power=$(jq -r '.data.batteryPower1' batterydata.json); if [ $battery1_power == "null" ]; then battery1_power="0"; fi;
+battery1_soc=$(jq -r '.data.batterySoc1' batterydata.json); if [ $battery1_soc == "null" ]; then battery1_soc="0"; fi;
+battery1_temperature=$(jq -r '.data.batteryTemp1' batterydata.json); if [ $battery1_temperature == "null" ]; then battery1_temperature="0"; fi;
+battery1_status=$(jq -r '.data.batteryStatus1' batterydata.json); if [ $battery1_status == "null" ]; then battery1_status="0"; fi;
 #Battery 2
-battery2_voltage=$(jq -r '.data.batteryVolt2' batterydata.json)
-battery2_current=$(jq -r '.data.batteryCurrent2' batterydata.json)
-battery2_power=$(jq -r '.data.batteryPower2' batterydata.json)
-battery2_soc=$(jq -r '.data.batterySoc2' batterydata.json)
-battery2_temperature=$(jq -r '.data.batteryTemp2' batterydata.json)
-battery2_status=$(jq -r '.data.batteryStatus2' batterydata.json)
+battery2_voltage=$(jq -r '.data.batteryVolt2' batterydata.json); if [ $battery2_voltage == "null" ]; then battery2_voltage="0"; fi;
+battery2_current=$(jq -r '.data.batteryCurrent2' batterydata.json); if [ $battery2_current == "null" ]; then battery2_current="0"; fi;
+battery2_power=$(jq -r '.data.batteryPower2' batterydata.json); if [ $battery2_power == "null" ]; then battery2_power="0"; fi;
+battery2_soc=$(jq -r '.data.batterySoc2' batterydata.json); if [ $battery_capacity == "null" ]; then battery_capacity="0"; fi;
+battery2_temperature=$(jq -r '.data.batteryTemp2' batterydata.json); if [ $battery2_temperature == "null" ]; then battery2_temperature="0"; fi;
+battery2_status=$(jq -r '.data.batteryStatus2' batterydata.json); if [ $battery2_status == "null" ]; then battery2_status="0"; fi;
 
 
-day_battery_charge=$(jq -r '.data.etodayChg' batterydata.json)
-day_battery_discharge=$(jq -r '.data.etodayDischg' batterydata.json)
-day_grid_export=$(jq -r '.data.etodayTo' griddata.json)
-day_grid_import=$(jq -r '.data.etodayFrom' griddata.json)
-day_load_energy=$(jq -r '.data.dailyUsed' loaddata.json)
-day_pv_energy=$(jq -r '.data.etoday' pvindata.json)
-grid_connected_status=$(jq -r '.data.status' griddata.json)
-grid_frequency=$(jq -r '.data.fac' griddata.json)
-grid_power=$(jq -r '.data.vip[0].power' griddata.json)
-grid_voltage=$(jq -r '.data.vip[0].volt' griddata.json)
-grid_current=$(jq -r '.data.vip[0].current' griddata.json)
-inverter_current=$(jq -r '.data.vip[0].current' outputdata.json)
-inverter_frequency=$(jq -r '.data.fac' outputdata.json)
-inverter_power=$(jq -r '.data.vip[0].power' outputdata.json)
-inverter_voltage=$(jq -r '.data.vip[0].volt' outputdata.json)
-load_current=$(jq -r '.data.vip[0].current' loaddata.json)
-load_frequency=$(jq -r '.data.loadFac' loaddata.json)
-load_power=$(jq -r '.data.vip[0].power' loaddata.json)
-load_totalpower=$(jq -r '.data.totalPower' loaddata.json)
-load_voltage=$(jq -r '.data.vip[0].volt' loaddata.json)
-pv1_current=$(jq -r '.data.pvIV[0].ipv' pvindata.json)
-pv1_power=$(jq -r '.data.pvIV[0].ppv' pvindata.json)
-pv1_voltage=$(jq -r '.data.pvIV[0].vpv' pvindata.json)
-pv2_current=$(jq -r '.data.pvIV[1].ipv' pvindata.json)
-pv2_power=$(jq -r '.data.pvIV[1].ppv' pvindata.json)
-pv2_voltage=$(jq -r '.data.pvIV[1].vpv' pvindata.json)
-overall_state=$(jq -r '.data.runStatus' inverterinfo.json)
+day_battery_charge=$(jq -r '.data.etodayChg' batterydata.json); if [ $day_battery_charge == "null" ]; then day_battery_charge="0"; fi;
+day_battery_discharge=$(jq -r '.data.etodayDischg' batterydata.json); if [ $day_battery_discharge == "null" ]; then day_battery_discharge="0"; fi;
+day_grid_export=$(jq -r '.data.etodayTo' griddata.json); if [ $day_grid_export == "null" ]; then day_grid_export="0"; fi;
+day_grid_import=$(jq -r '.data.etodayFrom' griddata.json); if [ $day_grid_import == "null" ]; then day_grid_import="0"; fi;
+day_load_energy=$(jq -r '.data.dailyUsed' loaddata.json); if [ $day_load_energy == "null" ]; then day_load_energy="0"; fi;
+day_pv_energy=$(jq -r '.data.etoday' pvindata.json); if [ $day_pv_energy == "null" ]; then day_pv_energy="0"; fi;
+grid_connected_status=$(jq -r '.data.status' griddata.json); if [ $grid_connected_status == "null" ]; then grid_connected_status="0"; fi;
+grid_frequency=$(jq -r '.data.fac' griddata.json); if [ $grid_frequency == "null" ]; then grid_frequency="0"; fi;
+grid_power=$(jq -r '.data.vip[0].power' griddata.json); if [ $grid_power == "null" ]; then grid_power="0"; fi;
+grid_voltage=$(jq -r '.data.vip[0].volt' griddata.json); if [ $grid_voltage == "null" ]; then grid_voltage="0"; fi;
+grid_current=$(jq -r '.data.vip[0].current' griddata.json); if [ $grid_current == "null" ]; then grid_current="0"; fi;
+inverter_current=$(jq -r '.data.vip[0].current' outputdata.json); if [ $inverter_current == "null" ]; then inverter_current="0"; fi;
+inverter_frequency=$(jq -r '.data.fac' outputdata.json); if [ $inverter_frequency == "null" ]; then inverter_frequency="0"; fi;
+inverter_power=$(jq -r '.data.vip[0].power' outputdata.json); if [ $inverter_power == "null" ]; then inverter_power="0"; fi;
+inverter_voltage=$(jq -r '.data.vip[0].volt' outputdata.json); if [ $inverter_voltage == "null" ]; then inverter_voltage="0"; fi;
+load_current=$(jq -r '.data.vip[0].current' loaddata.json); if [ $load_current == "null" ]; then load_current="0"; fi;
+load_frequency=$(jq -r '.data.loadFac' loaddata.json); if [ $load_frequency == "null" ]; then load_frequency="0"; fi;
+load_power=$(jq -r '.data.vip[0].power' loaddata.json); if [ $load_power == "null" ]; then load_power="0"; fi;
+load_totalpower=$(jq -r '.data.totalPower' loaddata.json); if [ $load_totalpower == "null" ]; then load_totalpower="0"; fi;
+load_voltage=$(jq -r '.data.vip[0].volt' loaddata.json); if [ $load_voltage == "null" ]; then load_voltage="0"; fi;
+pv1_current=$(jq -r '.data.pvIV[0].ipv' pvindata.json); if [ $pv1_current == "null" ]; then pv1_current="0"; fi;
+pv1_power=$(jq -r '.data.pvIV[0].ppv' pvindata.json); if [ $pv1_power == "null" ]; then pv1_power="0"; fi;
+pv1_voltage=$(jq -r '.data.pvIV[0].vpv' pvindata.json); if [ $pv1_voltage == "null" ]; then pv1_voltage="0"; fi;
+pv2_current=$(jq -r '.data.pvIV[1].ipv' pvindata.json); if [ $pv2_current == "null" ]; then pv2_current="0"; fi;
+pv2_power=$(jq -r '.data.pvIV[1].ppv' pvindata.json); if [ $pv2_power == "null" ]; then pv2_power="0"; fi;
+pv2_voltage=$(jq -r '.data.pvIV[1].vpv' pvindata.json); if [ $pv2_voltage == "null" ]; then pv2_voltage="0"; fi;
+overall_state=$(jq -r '.data.runStatus' inverterinfo.json); if [ $overall_state == "null" ]; then overall_state="0"; fi;
 
 # Dump of all values
 echo "battery_capacity" $battery_capacity
@@ -262,5 +262,4 @@ done
 
 echo "All Done! Waiting " $Refresh_rate " sesonds to rinse and repeat."
 sleep $Refresh_rate
-done
 done
