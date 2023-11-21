@@ -29,3 +29,6 @@ Added setting to change the regresh rate (In seconds) to the configuration scree
 ### 2023/11/19
 Added support for multiple inverters.
 
+### 2023/11/21
+Fix breaks in graphs. When null values are returned graphs generate breaks , all nulls are converted to zero.
+
