@@ -30,5 +30,5 @@ Added setting to change the regresh rate (In seconds) to the configuration scree
 Added support for multiple inverters.
 
 ### 2023/11/21
-Bug Fix: Breaks in graphs are caused by null values. All nulls are converted to zero.
+Version: "2.1.3" - Bug Fix: Breaks in graphs are caused by null values. All nulls are converted to zero.
 
