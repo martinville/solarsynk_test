@@ -11,12 +11,12 @@ arch:
   - i386
   
 options:
-  sunsynk_user: "mailmartinviljoen@gmail.com"
-  sunsynk_pass: "Compaq01?"
-  sunsynk_serial: "2302246241"
-  Home_Assistant_IP: "192.168.1.8"
+  sunsynk_user: ""
+  sunsynk_pass: ""
+  sunsynk_serial: ""
+  Home_Assistant_IP: ""
   Home_Assistant_PORT: 8123
-  HA_LongLiveToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmNzIxNjg3NWJiNDA0MTg1ODViMDQ3YTc1YmE2NGZiOSIsImlhdCI6MTcxMTk0OTA4NCwiZXhwIjoyMDI3MzA5MDg0fQ.ZRfT9s4Q6L_TzKZpAHmSe6CIi9Ef5Ey1T6T7n__WLqY"
+  HA_LongLiveToken: ""
   Refresh_rate: 300
   inverter_type_3Phase: false
   Enable_HTTPS: false
